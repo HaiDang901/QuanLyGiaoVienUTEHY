@@ -20,7 +20,7 @@ import { LuongComponent } from './luong/luong/luong.component';
 import { NangLuongComponent } from './luong/nang-luong/nang-luong.component';
 import { MonHocComponent } from './monhoc/mon-hoc/mon-hoc.component';
 import { LichDangKiComponent } from './monhoc/lich-dang-ki/lich-dang-ki.component';
-import { GiaoviensModule} from './giaoviens/giaoviens.module';
+//import { GiaoviensModule} from './giaoviens/giaoviens.module';
 import { from } from 'rxjs';
 
 
@@ -71,11 +71,11 @@ export const mainRoutes: Routes = [
         // data: { roles: [Role.Admin, Role.User] },
       },
       {
-        path: 'monhoc',
-        loadChildren: () =>
+       path: 'monhoc',
+       loadChildren: () =>
           import('./monhoc/monhoc.module').then((m) => m.MonhocModule),
-        // canActivate: [RoleGuard],
-        // data: { roles: [Role.Admin, Role.User] },
+      //   // canActivate: [RoleGuard],
+      //   // data: { roles: [Role.Admin, Role.User] },
       },
     ],
   },
@@ -103,7 +103,8 @@ export const mainRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    GiaoviensModule,
+    
+    // GiaoviensModule,
     RouterModule.forChild(mainRoutes)
   ],
 })
