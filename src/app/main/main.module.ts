@@ -22,9 +22,7 @@ import { MonHocComponent } from './monhoc/mon-hoc/mon-hoc.component';
 import { LichDangKiComponent } from './monhoc/lich-dang-ki/lich-dang-ki.component';
 import { GiaoviensModule} from './giaoviens/giaoviens.module';
 import { from } from 'rxjs';
-import { LuongModule } from './luong/luong.module';
-import { KhoaModule } from './khoa/khoa.module';
-import { MonhocModule } from './monhoc/monhoc.module';
+
 
 
 export const mainRoutes: Routes = [
@@ -58,27 +56,27 @@ export const mainRoutes: Routes = [
         // canActivate: [RoleGuard],
         // data: { roles: [Role.Admin, Role.User] },
       },
-      // {
-      //   path: 'khoa',
-      //   loadChildren: () =>
-      //     import('./khoa/khoa.module').then((m) => m.KhoaModule),
-      //   // canActivate: [RoleGuard],
-      //   // data: { roles: [Role.Admin, Role.User] },
-      // },
-      // {
-      //   path: 'luong',
-      //   loadChildren: () =>
-      //     import('./luong/luong.module').then((m) => m.LuongModule),
-      //   // canActivate: [RoleGuard],
-      //   // data: { roles: [Role.Admin, Role.User] },
-      // },
-      // {
-      //   path: 'monhoc',
-      //   loadChildren: () =>
-      //     import('./monhoc/monhoc.module').then((m) => m.MonhocModule),
-      //   // canActivate: [RoleGuard],
-      //   // data: { roles: [Role.Admin, Role.User] },
-      // },
+      {
+        path: 'khoa',
+        loadChildren: () =>
+          import('./khoa/khoa.module').then((m) => m.KhoaModule),
+        // canActivate: [RoleGuard],
+        // data: { roles: [Role.Admin, Role.User] },
+      },
+      {
+        path: 'luong',
+        loadChildren: () =>
+          import('./luong/luong.module').then((m) => m.LuongModule),
+        // canActivate: [RoleGuard],
+        // data: { roles: [Role.Admin, Role.User] },
+      },
+      {
+        path: 'monhoc',
+        loadChildren: () =>
+          import('./monhoc/monhoc.module').then((m) => m.MonhocModule),
+        // canActivate: [RoleGuard],
+        // data: { roles: [Role.Admin, Role.User] },
+      },
     ],
   },
 ];
@@ -106,9 +104,6 @@ export const mainRoutes: Routes = [
     CommonModule,
     SharedModule,
     GiaoviensModule,
-    // LuongModule,
-    // KhoaModule,
-    // MonhocModule,
     RouterModule.forChild(mainRoutes)
   ],
 })

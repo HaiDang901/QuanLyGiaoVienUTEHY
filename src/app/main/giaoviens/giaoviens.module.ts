@@ -16,7 +16,6 @@ import { GiaoVienComponent } from './giao-vien/giao-vien.component';
 
 
 
-
 @NgModule({
   declarations: [
     NgachCongChucComponent,
@@ -30,18 +29,26 @@ import { GiaoVienComponent } from './giao-vien/giao-vien.component';
     SharedModule,
     FormsModule,
     RouterModule.forChild([
-      // {
-      //   path: 'order',
-      //   component: OrderComponent,
-      // },
-      // {
-      //   path: 'product',
-      //   component: ProductComponent,
-      // },
-      // {
-      //   path: 'type',
-      //   component: TypeComponent,
-      // },
+      {
+        path: 'giaovien',
+        component: GiaoVienComponent,
+      },
+      {
+        path: 'hocvan',
+        component: HocVanComponent,
+      },
+      {
+        path: 'hopdong',
+        component: HopDongLdComponent,
+      },
+      {
+        path: 'lylich',
+        component: LyLichKhoaHocComponent,
+      },
+      {
+        path: 'ngachcongchuc',
+        component: NgachCongChucComponent,
+      }
   ]),
   ],
   bootstrap:    [ GiaoVienComponent ],
